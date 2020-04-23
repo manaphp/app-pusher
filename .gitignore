@@ -1,0 +1,10 @@
+/data
+/tmp
+/.env
+/.idea
+/*.tar
+/*.zip
+/*.bak
+/vendor
+/composer.lock
+/docker/.env
