@@ -2,33 +2,20 @@
 
 namespace App\Controllers;
 
-use ManaPHP\WebSocket\Controller;
-
-/**
- * Class IndexController
- *
- * @package App\Controllers
- *
- * @property-read \ManaPHP\ErrorHandlerInterface $errorHandler
- */
 class IndexController extends Controller
 {
-    public function openAction()
+    public function startAction()
     {
-        if ($token = $this->request->getToken()) {
-            $this->identity->setClaims(jwt_decode($token, 'pusher.admin'));
-        }
-
-        return 0;
+        $this->wspServer->start();
     }
 
-    public function messageAction($data)
+    public function openAction($fd)
     {
-        return $this->response->setContent($data);
+        $this->wspServer->open($fd);
     }
 
-    public function closeAction()
+    public function closeAction($fd)
     {
-        
+        $this->wspServer->close($fd);
     }
 }

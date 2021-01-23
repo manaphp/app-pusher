@@ -19,10 +19,10 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -n -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+      "php -n -r \"file_exists('config/.env') || copy('config/.env.example', 'config/.env');\"",
       "php -n -r \"chmod('manacli', 0755);\"",
-      "php -n -r \"chmod('data', 0777);\"",
-      "php -n -r \"chmod('tmp', 0777);\""
+      "php -n -r \"is_dir('data')||mkdir('data');chmod('data', 0777);\"",
+      "php -n -r \"is_dir('tmp')||mkdir('tmp');chmod('tmp', 0777);\""
     ]
   },
   "config": {
@@ -31,9 +31,17 @@
   "archive": {
     "exclude": [
       "!.gitkeep",
-      "!.env",
+      "!config/.env",
       "!vendor",
       ".travis.yml"
     ]
-  }
+  },
+  "keywords": [
+    "manaphp",
+    "ws",
+    "websocket",
+    "phalcon",
+    "laravel",
+    "yii2"
+  ]
 }

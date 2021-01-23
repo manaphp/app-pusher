@@ -1,10 +1,9 @@
+/vendor
 /data
 /tmp
-/.env
+/config/.env
 /.idea
 /*.tar
 /*.zip
 /*.bak
-/vendor
-/composer.lock
-/docker/.env
+/app/Controllers/TestController.php
