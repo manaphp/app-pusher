@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Services;
 
 /**
  * @property-read \ManaPHP\Logging\LoggerInterface       $logger
@@ -9,7 +9,7 @@ namespace App\Controllers;
  * @property-read \Redis                                 $redisCache
  * @property-read \Redis                                 $redisBroker
  */
-class Controller extends \ManaPHP\Ws\Controller
+class Service extends \ManaPHP\Service
 {
 
 }
